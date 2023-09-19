@@ -176,7 +176,7 @@ var findColumnWidth = function(grid) {
   // Output: 2
   // Explanation: "pro" is prefix of "problem" which is the 2nd and the 6th word in the sentence, but we return 2 as it's the minimal index.
   
-  // 1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence
+// 1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence
 // Easy
 // 778
 // 37
@@ -190,28 +190,37 @@ var findColumnWidth = function(grid) {
 // input: sentence, searchWord
 // output: index of the minimum word where the prefix is
 var isPrefixOfWord = function(sentence, searchWord) {
-    let minimum = 0;
+    // let minimum = 0;
+    let match = '';
     const words = sentence.split(' ');
     console.log(words);
     for (let i = 0; i < words.length; i++) {
-      if (words[i].includes(searchWord)) {
-        minimum = i;
-      }
+      for(let j = 0; j < searchWord.length; j++) {
+        if (words[i][j] !== searchWord[j]) {
+          break;
+        }
+        // burg = length 4
+        // j = 3 = end
+        match += words[i][j];
+        console.log(match);
+        if (j === searchWord.length - 1) return i;
+        // if (match === searchWord) return i;
+      } 
     }
     return -1;
   }
   
-  // const sentence = "i love eating burger";
-  // const searchWord = "burg";
+  const sentence = "i love eating burger";
+  const searchWord = "burg";
   
   // const sentence2 = "hellohello hellohellohello"
   // const searchWord2 = "ell"
   
-  const sentence1 = "this problem is an easy problem"
-  const searchWord1 = "pro"
+  // const sentence1 = "this problem is an easy problem"
+  // const searchWord1 = "pro"
   
-  // console.log(isPrefixOfWord(sentence, searchWord));
-  console.log(isPrefixOfWord(sentence1, searchWord1));
+  console.log(isPrefixOfWord(sentence, searchWord));
+  // console.log(isPrefixOfWord(sentence1, searchWord1));
   // console.log(isPrefixOfWord(sentence2, searchWord2));
   
   
@@ -228,5 +237,3 @@ var isPrefixOfWord = function(sentence, searchWord) {
   // Input: sentence = "this problem is an easy problem", searchWord = "pro"
   // Output: 2
   // Explanation: "pro" is prefix of "problem" which is the 2nd and the 6th word in the sentence, but we return 2 as it's the minimal index.
-  
-  
