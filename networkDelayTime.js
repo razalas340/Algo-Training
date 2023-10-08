@@ -20,7 +20,7 @@
 // Example 3:
 
 // Input: times = [[1,2,1]], n = 2, k = 2
-
+//THIS IS USING BELLMAN-FORD ALGO.
 const networkDelayTime = (times, N, K) => {
   const time = new Array(N + 1).fill(Infinity);
   time[K] = 0;
