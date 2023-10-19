@@ -10,7 +10,34 @@
 // // You must write an algorithm that runs in O(n) time and without using the division operation.
 
 // var productExceptSelf = function(nums) {
+// let result = new Array(nums.length)
 
+// result[0] = 1
+
+// for (let i = 1; i < nums.length; i++){
+//   result[i] = nums[i - 1] * result[i - 1]
+// }
+//   // 0  1  2  3
+// // [ 1, 1, 2, 6 ] result
+
+// // [ 24, 12, 8, 6 ] output
+
+//   let product = 1
+//  // [1,2,3,4] nums
+
+// // result 6 *= product 1
+// // product = product 1 * nums[i] 4
+
+// // result 2 *= product 4
+// // product = product 4 * nums[i] 3
+// // result 1 *= product 12
+
+//   for (let i = nums.length - 1; i >= 0; i--){
+//     result[i] *= product
+//     product *= nums[i]
+//   }
+
+// return result
 //   let preFix = []
 //   let postFix = []
 
