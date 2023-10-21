@@ -35,6 +35,7 @@ var dailyTemperatures = function (temperatures) {
 // console.log(dailyTemperatures(temperatures))
 // Output: [1,1,4,2,1,1,0,0]
 
+// THIS IS USING STACK PROPERLY
 //o(n)
 var dailyTemperatures = function (temperatures) {
   let result = new Array(temperatures.length).fill(0);
