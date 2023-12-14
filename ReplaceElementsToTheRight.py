@@ -1,6 +1,6 @@
  #console.log(replaceElements(arr))
 
- class Solution:
+class Solution:
      def replaceElements(self, arr: List[int]) -> List[int]:
 
 # let curHighest = arr[arr.length - 1]
