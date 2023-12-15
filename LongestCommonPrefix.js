@@ -7,25 +7,24 @@
 
 // If there is no common prefix, return an empty string "".
 
-var longestCommonPrefix = function(strs) {
-    // let result = ''
-  
-    let ans = ''
-    strs.sort()
-  
-    let first = strs[0]
-    let last = strs[strs.length - 1]
-  
-    // for (let i = 0; i < Math.min(first.length, last.length); i++) {
-    for (let i = 0; i < first.length; i++) {
-  
-      if (first[i] !== last[i]){
-        return ans
-      }
-      ans += first[i]
+var longestCommonPrefix = function (strs) {
+  // let result = ''
+
+  let ans = '';
+  strs.sort();
+
+  let first = strs[0];
+  let last = strs[strs.length - 1];
+
+  // for (let i = 0; i < Math.min(first.length, last.length); i++) {
+  for (let i = 0; i < first.length; i++) {
+    if (first[i] !== last[i]) {
+      return ans;
     }
-    return ans
-    
+    ans += first[i];
+  }
+  return ans;
+};
 
 // Example 1:
 
