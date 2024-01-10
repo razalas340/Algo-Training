@@ -1,14 +1,14 @@
+
 class Solution:
-    def minimumDifference(self, nums: List[int], k: int) -> int: 
+    def minimumDifference(self, nums: List[int], k: int) -> int:
+        nums.sort()
 
-    nums.sort()
+        minDiff = float('inf')
 
-    minDiff = float('inf')
+        for i in range(len(nums) - k + 1):
+            minDiff = min(minDiff, abs(nums[i] - nums[i + k - 1]))
 
-    for i in range(len(nums) - k + 1):
-        minDiff = min(minDiff, abs(nums[i] - nums[i + k - 1]))
-
-    return minDiff
+        return minDiff
 
 
 #console.log(minimumDifference(nums1, 6)); 
