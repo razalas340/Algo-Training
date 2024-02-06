@@ -1,17 +1,15 @@
-def parse_file(txt_file):
-    txt_map = {}
-    with open(txt_file, 'r') as file:
+def parse_file(file_text):
+    map_text = {}
+    with open(file_text, 'r') as file:
+        print(file)
         for line in file:
             parts = line.strip().split(' ', 1)
             if len(parts) == 2:
                 key, value = parts
-                txt_map[int(key)] = value
-    return txt_map
-
-txt_file = 'codeTest.txt' 
-
-file_map = parse_file(txt_file)
-
+                map_text[int(key)] = value
+    return map_text
+file_text = 'coding_qual_input.txt' 
+file_map = parse_file(file_text)
 
 def decode_file(file_map):
     file_map_len = len(file_map)
@@ -20,7 +18,6 @@ def decode_file(file_map):
     res = file_map[count]
     count += amount
     amount += 1
-
     while count <= file_map_len:
         res = res + " " + file_map[count]
         count += amount
